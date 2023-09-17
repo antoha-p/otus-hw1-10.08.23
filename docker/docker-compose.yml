@@ -1,0 +1,12 @@
+﻿version: "3.7"
+
+services:
+  postgres:
+    container_name: 'postgres'
+    image: postgres
+    networks:
+      - otus-network
+
+networks:
+  otus-network:
+    driver: bridge

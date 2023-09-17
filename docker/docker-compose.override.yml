@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  postgres:
+    user: root
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      PGDATA: /var/lib/pg_data
+      #POSTGRES_HOST_AUTH_METHOD: ${POSTGRES_HOST_AUTH_METHOD}
+    ports:
+      - '${POSTGRES_PORT}:5432'
+    volumes:
+      - ./postgres/data:/var/lib/postgresql/data
+
+networks:
+  global:
+    name: otus-network
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.19.0.0/16
