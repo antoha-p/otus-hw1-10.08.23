@@ -16,4 +16,17 @@
 
 ### Инструкция запуска
 
-1. Склонируйте приложение 
+1. Склонируйте приложение и зайдите в проект:  
+   `git clone https://github.com/antoha-p/otus-hw1-10.08.23.git && cd otus-hw1-10.08.23`
+2. Зайдите в каталог docker, скопируйте .env.example в .env и запустите докер:  
+    `cd docker && cp .env.example .env && docker-compose up`
+3. Откройте решение и запустите проект:
+
+![alt text](screenshot.png)
+
+1. Настройки подключения к БД находятся в `App.config` (настроены для .env.example).
+2. Скрипты обработчики для выполнения пунктов задания находятся в `Handler/`:
+   1. `Handler/CreateTablesHandler.cs` - создаёт таблицы.
+   2. `Handler/InsertAutoHandler.cs` - создаёт по 5 записей в таблицу.
+   3. `Handler/ShowDataHandler.cs` - выводит содержимое всех таблиц.
+   4. `Handler/InsertManualHandler.cs` - добавляет данные вручную.
