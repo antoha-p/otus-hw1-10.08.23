@@ -85,11 +85,6 @@ public class MenuHandler : IMenu
 
         foreach (var menuItem in _menuList)
         {
-            if (menuItem.Title.Length % 2 != 0)
-            {
-                menuItem.Title += " ";
-            }
-
             var minimumWidth = (maximumWidth - menuItem.Title.Length) / 2;
 
             for (var j = 0; j < minimumWidth; j++)
